@@ -13,10 +13,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # Optional: helps debug file structure (can remove later)
-      - name: List files
-        run: ls -la
-
       - name: Deploy to S3
         uses: jakejarvis/s3-sync-action@master
         with:
@@ -26,4 +22,4 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          SOURCE_DIR: .
+

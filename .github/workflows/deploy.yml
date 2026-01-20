@@ -20,8 +20,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Sync files to S3
+      - name: Upload website files
         run: |
-          aws s3 sync . s3://${{ secrets.AWS_S3_BUCKET }} --delete
+          aws s3 sync Portfolio-website s3://${{ secrets.AWS_S3_BUCKET }} --delete
+
+
 
 
